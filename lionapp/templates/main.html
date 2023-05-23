@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type = "text/css" href = "{% static 'css/main.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>main</title>
+    {% endblock %}
+</head> 
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'main'%}">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Main</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Jungdaun' %}">Jungdaun</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+        <h1>노원 놀거리</h1>
+      {% endblock  %}
+
+      {% block content2 %}
+        <img src="{% static 'img/map.png' %}" alt = "지도"> 
+      {% endblock  %}
+
+      <br>
+      <div class="container">
+        <button type="button" class="btn btn-outline-primary">나</button>
+        <button type="button" class="btn btn-outline-secondary">를</button>
+        <button type="button" class="btn btn-outline-success">소</button>
+        <button type="button" class="btn btn-outline-danger">개</button>
+        <button type="button" class="btn btn-outline-warning">하</button>
+        <button type="button" class="btn btn-outline-info">다</button>
+      </div>
+
+    {% for ex_posts in ex_posts %}
+    <p>제목:{{ ex_posts.title }}</p>
+    <p>글 내용:{{ ex_posts.content }}</p>
+    <p>작성자:{{ ex_posts.user }}</p>
+    <p>글 작성 시간:{{ ex_posts.create_time }}</p>
+    <p>수정 시간:{{ ex_posts.update_time }}</p>
+    {% endfor %}
+   
+
+    {% for nowon in nowon %}
+    <p>food:{{ nowon.food }}</p>
+    <p>cafe:{{ nowon.cafe }}</p>
+    <p>mountain:{{ nowon.mountain }}</p>
+    <p>store:{{ nowon.store }}</p>
+    {% endfor %}
+</body>
+</html>
