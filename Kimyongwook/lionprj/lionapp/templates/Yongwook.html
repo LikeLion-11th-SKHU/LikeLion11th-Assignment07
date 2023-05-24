@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>나의 희망 포지션</title>
+{% endblock %}
+
+{% block content %}
+  <h5>우리 동네 소개</h5>
+{% endblock %}
+
+{% block content2 %}
+  <h3>나의 희망 진로</h3>
+{% endblock %}
+
+    {% block content3 %}
+    {% for ex_posts in ex_posts %}
+    <p>제목:{{ ex_posts.title }}</p>
+    <p>글 내용:{{ ex_posts.content }}</p>
+    <p>작성자:{{ ex_posts.user }}</p>
+    <p>글 작성 시간:{{ ex_posts.create_time }}</p>
+    <p>글 수정 시간:{{ ex_posts.updated_time }}</p>
+    {% endfor %} 
+    {% endblock %}
+  
