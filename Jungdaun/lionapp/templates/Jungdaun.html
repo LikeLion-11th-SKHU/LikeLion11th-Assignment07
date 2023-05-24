@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% load static %}
+ 
+{% block title %}
+        <title>Jungdaun</title>
+{% endblock %}
+
+{% block content %}
+    <h1>희망하는 포지션</h1>
+{% endblock  %}
+
+{% block content2 %}
+    <img src="{% static 'img/backend.jpg' %}" alt = "백엔드 이미지">
+{% endblock  %}
+
+{% block content3 %}
+    {% for position in positions %}
+        <p>포지션:{{ position.pos }}</p>
+        <p>설명:{{ position.explanation }}</p>
+        <p>이유:{{ position.reason }}</p>
+    {% endfor %}
+{% endblock %}

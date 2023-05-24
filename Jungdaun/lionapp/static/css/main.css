@@ -1,0 +1,22 @@
+body{
+    background-color: palegoldenrod;
+}
+
+h1 {
+    color: yellowgreen;
+    text-align: center;
+}
+
+img{
+    display: flex;
+    margin: auto;
+}
+
+.container{
+    text-align: center;
+}
+
+p{
+    color: steelblue;
+    text-align: center;
+}
