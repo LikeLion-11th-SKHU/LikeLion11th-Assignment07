@@ -1,0 +1,21 @@
+<!-- 자신의 동네를 소개하는 페이지 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <h1>저의 동네를 소개합니다</h1>
+
+    {% for ex_posts in ex_posts.all %}
+    <p>제목:{{ ex_posts.title }}</p>
+    <p>글 내용:{{ ex_posts.content }}</p>
+    <p>작성자:{{ ex_posts.user }}</p>
+    <p>작성 시간:{{ ex_posts.create_time }}</p>
+    <p>수정 시간:{{ ex_posts.updated_time }}</p>
+    {% endfor %}
+</body>
+</html>
