@@ -6,4 +6,5 @@ from .models import Backend
 # Register your models here.
 
 admin.site.register(Ex_Post)
+
 admin.site.register(Backend)
