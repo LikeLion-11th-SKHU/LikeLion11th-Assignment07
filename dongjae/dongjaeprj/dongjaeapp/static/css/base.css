@@ -1,0 +1,19 @@
+body {
+    background-color: antiquewhite;
+}
+p {
+    font-size: 15pt;
+}
+.img {
+    text-align: center;
+}
+.content1 {
+    display: flex;
+    justify-content: space-around;
+}
+.img img {
+    width: 300px;
+}
+.table table-striped {
+    margin: 0;
+}
