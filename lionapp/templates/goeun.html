@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>goeun</h1>
+{% for lion_posts in lion_posts %}
+<p>제목:{{ lion_posts.title }}</p>
+<p>글내용:{{ lion_posts.content}}</p>
+<p>작성자:{{ lion_posts.user}}</p>
+<p>글 작성시간:{{ lion_posts.create_time }}</p>
+<p>글 수정시간:{{lion_posts.updated_time }}</p>
+{% endfor %}
+</body>
+</html>
