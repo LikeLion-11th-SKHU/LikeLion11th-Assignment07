@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+<head>
+    {% block title %}
+    <title>shinhee</title>
+    {% endblock %}
+</head>
+   
+<body>
+    {% block content %}
+
+    {% for ex_post in ex_post %}
+      <p>제목: {{ ex_post.title }}</p>
+      <p>글 내용: {{ex_post.content }}</p>
+      <p>작성자: {{ex_post.user}}</p>
+      {% endfor %}
+
+      {% endblock %}
+</body>
+</html>
+
