@@ -20,3 +20,4 @@ class Ex_Post(models.Model):
 
     def __str__(self): # __str__ 문자열 변환
         return self.title # class Ex_Post의 title로 return
+    

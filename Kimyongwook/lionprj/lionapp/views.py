@@ -6,11 +6,8 @@ import lionapp.views # lionapp에 있는 views를 가져와서 사용
 
 def main(request): # request가 들어왔을 때 Template을 넘겨주는 함수
     lion_posts = Lion_Post.objects.all()
-    ex_posts = Ex_Post.objects.all()
     return render(request, 'main.html' , {'lion_posts' : lion_posts})
 
 def Yongwook(request): # request시 Template에 해당하는 html을 브라우저에 보여줌
-    lion_posts = Lion_Post.objects.all()
-    ex_posts = Ex_Post.objects.all()
-    # return render(request, 'Yongwook.html' , {'lion_posts' : Lion_Post.objects.all})
+    ex_posts = Ex_Post.objects.all() 
     return render(request, 'Yongwook.html' , {'ex_posts' : ex_posts})
