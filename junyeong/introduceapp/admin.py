@@ -7,4 +7,5 @@ from .models import Backend
 
 admin.site.register(Ex_Post)
 
+
 admin.site.register(Backend)
