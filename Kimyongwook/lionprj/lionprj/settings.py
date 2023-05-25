@@ -130,7 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATICFILES_DIRS = [ # 개발 단계에서 사용하는 정적 파일이 위치한 경로 지정
-    os.path.join(BASE_DIR, 'Kimyongwook', 'lionprj', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'lionapp' , 'static') # 웹 페이지에서 사용할 정적 파일의 최상위 URL을 지정
