@@ -8,13 +8,23 @@
 {% block content %}
 
 <br>
-<h1>희망하는 포지션</h1>
+<h1>희망하는 포지션 </h1><br>
 <br>
 <div class="card" style="width: 50rem;">
     <img src="{% static 'img/backend.png' %}" class="card-img-top" alt="backend">
     <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
+        <p class="card-text">백엔드</p>
     </div>
 </div>
+{% endblock %}
+<br>
+
+{% block content2 %}
+{% for backend in backend %}
+<h2>{{ backend.title }}</h2>
+<p>{{ backend.content }}</p>
+<hr>
+{% endfor %}
+{% endblock %}
+{% block content3 %}
 {% endblock %}

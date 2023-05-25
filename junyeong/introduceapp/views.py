@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Ex_Post
+from .models import Ex_Post, Backend
+
 
 # Create your views here.
 
@@ -10,4 +11,5 @@ def main(request):
 
 
 def junyeong(request):
-    return render(request, "junyeong.html", {"ex_posts": ex_posts})
+    backend = Backend.objects.all
+    return render(request, "junyeong.html", {"backend": backend})
