@@ -1,0 +1,23 @@
+<!-- 자신이 정한 포지션 -->
+{% extends 'main.html' %}
+
+{% block title %}
+    <title>Sieun</title>
+{% endblock %}
+
+{% block content %}
+    <h1>저의 희망 포지션입니다</h1>
+{% endblock %}
+
+{% block content2 %}
+    <hr><br>
+    {% for si_posts in si_posts.all %}
+    <p>제목:{{ si_posts.title }}</p>
+    <p>글 내용:{{ si_posts.content }}</p>
+    <p>작성자:{{ si_posts.user }}</p>
+    <p>작성 시간:{{ si_posts.create_time }}</p>
+    <p>수정 시간:{{ si_posts.updated_time }}</p>
+    <br>
+    {% endfor %}
+    <hr>
+{% endblock %}
