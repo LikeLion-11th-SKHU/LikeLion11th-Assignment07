@@ -21,4 +21,5 @@ from inapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main),
+    path('sieun/', views.sieun),
 ]
