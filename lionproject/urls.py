@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from lionapp import views
 import lionapp.views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('',lionapp.views.main, name='main'),
+    path('',lionapp.views.main, name='main'),
     path('goeun/',lionapp.views.goeun, name='goeun'),
+    path('',views.main),
+    path('goeun/',views.goeun),
 ]

@@ -13,5 +13,4 @@ def main(request) :
     return render(request,'main.html',{'lion_posts':lion_posts})
 
 def goeun(request) :
-    lion_posts = Lion_Post.objects.all
-    return render(request,'goeun.html',{'lion_posts':lion_posts})
+    return render(request,'goeun.html',{'lion_post':Lion_Post.objects.all})
