@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    {% block title %}
+    <title>멋쟁이 사자처럼 11기</title>
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'main' %}">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'main' %}">main</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'hayrin' %}">hayrin</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+<button type="button" class="btn btn-success" >혜린의 포지션</button>
+    {% block content %}
+
+    <h1>202314009-전혜린</h1>
+
+    <h3>동네소개</h3>
+    <img src="{% static 'img/img1.png' %}" alt="논현">
+
+    <p>방탈출</p>
+    <img src="{% static 'img/img2.png' %}" alt="일상비일상의 틈">
+    
+    <p>켈리라운지 & 두껍상회</p>
+    <img src="{% static 'img/img3.jpg' %}" alt="캘리">
+
+    <p>스퀘어강남</p>
+    <img src="{% static 'img/img4.jpg' %}" alt="스퀘어">
+
+    <p>일상비일상의틈</p>
+    <img src="{% static 'img/img5.jpg' %}" alt="일상비일상의 틈">
+
+    {% for rin_posts in main_posts %}
+    <p>제목:{{ rin_posts.title }}</p>
+    <p>글 내용:{{ rin_posts.content }}</p>
+    <p>작성자:{{ rin_posts.user }}</p>
+    <p>글 작성 시간:{{ rin_posts.create_time }}</p>
+    <p>글 수정 시간:{{ rin_posts.updated_time }}</p>
+    {% endfor %} 
+
+</body>
+</html>
+    {% endblock %}
