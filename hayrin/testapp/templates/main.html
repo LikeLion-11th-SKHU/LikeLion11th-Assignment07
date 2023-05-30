@@ -13,7 +13,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'main' %}">202314009 전혜린</a>
+          <a class="navbar-brand" href="{% url 'main' %}">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,47 +25,41 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'hayrin' %}">hayrin</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
+              
             </ul>
           </div>
         </div>
       </nav>
 
-<button type="button" class="btn btn-primary">Primary</button>
 
+<button type="button" class="btn btn-success" >혜린의 포지션</button>
+    {% block content %}
 
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <img src="{% static 'img/img1.jpg' %}" alt="일상비일상의틈">
-    </div>
-    <div class="col">
-      <img src="{% static 'img/img2.png' %}" alt="방탈출">
-    </div>
-    <div class="col">
-      <img src="{% static 'img/img3.jpg' %}" alt="켈리&두껍상회">
-    </div>
-    <div class="col">
-      <img src="{% static 'img/img4.jpg' %}" alt="스퀘어강남">
-    </div>
-  </div>
-</div><br>
-{% block content %}
-<h1>main page</h1>
-<hr>
+    <h1>202314009-전혜린</h1>
 
-{% for main_posts in main_posts %}
-<p>제목:{{ main_posts.title }}</p>
-<p>글 내용:{{ main_posts.content }}</p>
-<p>작성자:{{ main_posts.user }}</p>
-<p>글 작성 시간:{{ main_posts.create_time }}</p>
-<p>글 수정 시간:{{ main_posts.updated_time }}</p>
-{% endfor %} 
+    <h3>동네소개</h3>
+    <img src="{% static 'img/img1.png' %}" alt="논현">
 
-</form>
-{% endblock %}
+    <p>방탈출</p>
+    <img src="{% static 'img/img2.png' %}" alt="일상비일상의 틈">
+    
+    <p>켈리라운지 & 두껍상회</p>
+    <img src="{% static 'img/img3.jpg' %}" alt="캘리">
+
+    <p>스퀘어강남</p>
+    <img src="{% static 'img/img4.jpg' %}" alt="스퀘어">
+
+    <p>일상비일상의틈</p>
+    <img src="{% static 'img/img5.jpg' %}" alt="일상비일상의 틈">
+
+    {% for rin_posts in main_posts %}
+    <p>제목:{{ rin_posts.title }}</p>
+    <p>글 내용:{{ rin_posts.content }}</p>
+    <p>작성자:{{ rin_posts.user }}</p>
+    <p>글 작성 시간:{{ rin_posts.create_time }}</p>
+    <p>글 수정 시간:{{ rin_posts.updated_time }}</p>
+    {% endfor %} 
 
 </body>
 </html>
+    {% endblock %}

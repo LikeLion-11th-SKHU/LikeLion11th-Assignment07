@@ -1,8 +1,7 @@
-h1 {
-    color: darkgray;
+h1{
+    text-align: center;
 }
-
-.container {
-    width: 65px;
-    height: 80px;
+img{
+    height: 20em;
+    width: 20em;
 }

@@ -1,20 +1,13 @@
-{% extends 'main.html' %}
-
-{% block title %}
-<title>멋쟁이 사자처럼 11기</title>
-{% endblock %}
-
-
-<h3>희망하는 포지션</h3>
-<h3>선택 이유</h3>
-
-
-{% block content %}
-{% for rin_posts in rin_posts %}
-<p>제목:{{ rin_posts.title }}</p>
-<p>글 내용:{{ rin_posts.content }}</p>
-<p>작성자:{{ rin_posts.user }}</p>
-<p>글 작성 시간:{{ rin_posts.create_time }}</p>
-<p>글 수정 시간:{{ rin_posts.updated_time }}</p>
-{% endfor %} 
-{% endblock %}
+    {% extends 'main.html' %}
+    {% block title %}
+    <title>멋쟁이 사자처럼 11기</title>
+    {% endblock %}
+    {% block content%}
+    {% for rin_posts in hayrin_post %}
+    <p>희망하는 포지션:{{ rin_posts.title }}</p>
+    <p>선정이유:{{ rin_posts.content }}</p>
+    <p>작성자:{{ rin_posts.user }}</p>
+    <p>글 작성 시간:{{ rin_posts.create_time }}</p>
+    <p>글 수정 시간:{{ rin_posts.updated_time }}</p>
+    {% endfor %} 
+    {% endblock %}

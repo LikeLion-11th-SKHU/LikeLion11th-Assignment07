@@ -1,14 +1,12 @@
 from django.shortcuts import render
-from .models import hayrin_Post
-from .models import main_Post
-
+from .models import rin_Post
+from .models import test_Post
 
 # Create your views here.
+
 def main(request):
-    main_posts = main_Post.objects.all()
-    return render(request, 'main.html', {'main_posts': main_posts})
-
-
+    main_post = rin_Post.objects.all
+    return render(request,'main.html' , {'main_posts': main_post})
 def hayrin(request):
-    rin_posts = hayrin_Post.objects.all()
-    return render(request, 'hayrin.html', {'rin_posts': rin_posts})
+    hayrin_post = test_Post.objects.all
+    return render(request,'hayrin.html' , {'hayrin_post': hayrin_post} )
