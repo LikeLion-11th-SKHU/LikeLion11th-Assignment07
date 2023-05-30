@@ -5,28 +5,12 @@
 {% endblock %}
 
 {% block content %}
-    <h1>포지션 소개 입니다.</h1>
+    {% for lion_post in lion_post %}
+    <h1>포지션</h1>
+    <p>테스트_제목:{{ lion_post.title }}</p>
+    <p>글내용:{{ lion_post.content}}</p>
+    <p>작성자:{{ lion_post.user}}</p>
+    <p>글 작성시간:{{ lion_post.create_time }}</p>
+    <p>글 수정시간:{{lion_post.updated_time }}</p>
+    {% endfor %}
 {% endblock %}
-
-{% block content2 %}
-    <p>희망 포지션: 프론트엔드</p>
-    <br>
-    <p>프론트엔드란?</p>
-    <p>사용자가 서비스를 이용하기 위해 웹페이지나 앱 내에서 만나고 경험하는 모든 부분</p>
-    <p>사용언어:  HTML, CSS, JavaScript</p>
-    <br>
-    <p>선택이유</p>
-    <p>저는 무언가를 진행할 때 잘하는 것보다는 재미있고, 힘들어도 계속할 수 있는지를 먼저 봅니다. 
-    그래서 멋사를 하는 동안 제일 흥미롭고 재미있게 했던 부분들이 백엔드보다는 프론트엔드 부분이어서 선택했습니다.
-    </p>
-{% endblock %}
-
- <br>
-
-{% for 테스트 in lion_post %}
-<p>테스트_제목:{{ 테스트.title }}</p>
-<p>글내용:{{ 테스트.content}}</p>
-<p>작성자:{{ 테스트.user}}</p>
-<p>글 작성시간:{{ 테스트.create_time }}</p>
-<p>글 수정시간:{{테스트.updated_time }}</p>
-{% endfor %}

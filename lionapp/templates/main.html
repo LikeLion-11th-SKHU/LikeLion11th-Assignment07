@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Main</title>
 </head>
 <body>
 
@@ -32,8 +33,7 @@
         </div>
       </nav>
 
-
-
+{% block content %}
 {% for lion_posts in lion_posts %}
 <h1>main</h1>
 <h1>동네소개</h1>
@@ -43,6 +43,8 @@
 <p>글 작성시간:{{ lion_posts.create_time }}</p>
 <p>글 수정시간:{{ lion_posts.updated_time }}</p>
 {% endfor %}
+{% endblock %}
+
 
 
     <nav class="navbar bg-light">
