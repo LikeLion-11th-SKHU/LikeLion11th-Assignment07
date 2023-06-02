@@ -1,0 +1,29 @@
+    {% extends 'main.html' %}
+    {% load static %}
+
+    {% block title %}
+    <title>Gaeul</title>
+    {% endblock %}
+
+    {% block content %}
+    {% for Position in positions %}
+    <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">희망 포지션</div>
+        <div class="card-body">
+          <p class="card-text">{{ Position.pos }}</p>
+        </div>
+    </div>
+    <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">포지션 설명</div>
+        <div class="card-body">
+          <p class="card-text">{{ Position.explanation }}</p>
+        </div>
+    </div>
+    <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-header">희망 이유</div>
+        <div class="card-body">
+          <p class="card-text">{{ Position.reason }}</p>
+        </div>
+    </div>
+    {% endfor %}
+    {% endblock %}

@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/main.css' %}">
+    
+    {% block title %}
+    <title>Main</title>
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'main' %}">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Main</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'gaeul' %}">Gaeul</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    {% block content %}
+    <h1 class="display-3">우리 동네를 소개합니다.</h1>
+    {% endblock %}
+    <hr>
+    {% block content2 %}
+    <img src="{% static 'img/original_(2).gif' %}" alt="wave">
+    {% endblock %}
+
+    {% block content3 %}
+
+    {% for Lion_Post in lion_posts %}
+    <p>제목:{{ lion_posts.title }}</p>
+    <p>글 내용:{{ lion_posts.content }}</p>
+    <p>작성자:{{ lion_posts.user }}</p>
+    <p>작성 시간:{{ lion_posts.create_time }}</p>
+    <p>수정 시간:{{ lion_posts.update_time }}</p>
+    {% endfor %}
+   
+
+    {% for hometowns in hometowns %}
+    <p>home:{{ hometowns.home }}</p>
+    <p>river:{{ hometowns.river }}</p>
+    <p>food:{{ hometowns.food }}</p>
+    {% endfor %}
+
+    {% endblock %}
+
+</body>
+</html>
