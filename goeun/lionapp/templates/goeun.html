@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    <title>goeun</title>
+{% endblock %}
+
+{% block content %}
+    {% for lion_post in lion_post %}
+    <h1>포지션이지롱</h1>
+    <p>테스트_제목:{{ lion_post.title }}</p>
+    <p>글내용:{{ lion_post.content}}</p>
+    <p>작성자:{{ lion_post.user}}</p>
+    <p>글 작성시간:{{ lion_post.create_time }}</p>
+    <p>글 수정시간:{{lion_post.updated_time }}</p>
+    {% endfor %}
+{% endblock %}
